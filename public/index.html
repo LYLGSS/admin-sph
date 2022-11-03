@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title><%= webpackConfig.name %></title>
+    <style>
+      /* 解决 elementUi messageBox 消息弹框抖动 */
+      body {
+        overflow-y: auto !important; /* 只写这个属性，会出现两个滚动条 */
+        padding-right: 0 !important; /* 只写这个属性，当你打开dialog时，由于padding-right=0；页面宽度会大17px；dialog会抖动 */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
