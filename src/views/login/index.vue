@@ -34,21 +34,32 @@
 </template>
 
 <script>
-import { validUsername } from '@/utils/validate'
+// import { validUsername } from '@/utils/validate'
 
 export default {
   name: 'Login',
   data() {
+    // const validateUsername = (rule, value, callback) => {
+    // if (!validUsername(value)) {
+    //   callback(new Error('Please enter the correct user name'))
+    // } else {
+    //   callback()
+    // }
+    // callback()
+    // }
+
+    // 自定义用户名验证规则
     const validateUsername = (rule, value, callback) => {
-      if (!validUsername(value)) {
-        callback(new Error('Please enter the correct user name'))
+      if (value.trim() === '') {
+        callback(new Error('请输入用户名！'))
       } else {
         callback()
       }
     }
+    // 自定义密码验证规则
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
-        callback(new Error('The password can not be less than 6 digits'))
+        callback(new Error('密码不能小于6位数字！'))
       } else {
         callback()
       }

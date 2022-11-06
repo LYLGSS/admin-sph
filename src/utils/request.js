@@ -48,7 +48,7 @@ service.interceptors.response.use(
     // 服务器响应失败，真实的服务器返回的code为20000||200
     if (res.code !== 20000 && res.code !== 200) {
       Message({
-        message: res.message || 'Error',
+        message: res.message || '该用户不存在！',
         type: 'error',
         duration: 5 * 1000
       })
